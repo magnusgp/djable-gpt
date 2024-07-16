@@ -1,5 +1,7 @@
 pathspec==0.9.0
 protobuf==4.25.3
+datasets
+tabulate
 black
 flake8
 isort

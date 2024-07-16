@@ -15,6 +15,8 @@ RAW_DATA_DIR = DATA_DIR / "raw"
 INTERIM_DATA_DIR = DATA_DIR / "interim"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 EXTERNAL_DATA_DIR = DATA_DIR / "external"
+HF_PATH_DIR = "LipengCS/Table-GPT"
+DATASET_SUBSET = "ErrorDetection"
 
 MODELS_DIR = PROJ_ROOT / "models"
 

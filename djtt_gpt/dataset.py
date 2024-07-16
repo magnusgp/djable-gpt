@@ -1,29 +1,22 @@
 from pathlib import Path
 
 import typer
-from loguru import logger
-from tqdm import tqdm
 
-from djtt_gpt.config import PROCESSED_DATA_DIR, RAW_DATA_DIR
+from datasets import load_dataset
+
+from djtt_gpt.config import RAW_DATA_DIR, HF_PATH_DIR, DATASET_SUBSET
 
 app = typer.Typer()
 
-
 @app.command()
 def main(
-    # ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
-    input_path: Path = RAW_DATA_DIR / "dataset.csv",
-    output_path: Path = PROCESSED_DATA_DIR / "dataset.csv",
-    # ----------------------------------------------
+    input_path: Path = HF_PATH_DIR,
+    output_path: Path = RAW_DATA_DIR,
+    data_subset: str = DATASET_SUBSET
 ):
-    # ---- REPLACE THIS WITH YOUR OWN CODE ----
-    logger.info("Processing dataset...")
-    for i in tqdm(range(10), total=10):
-        if i == 5:
-            logger.info("Something happened for iteration 5.")
-    logger.success("Processing dataset complete.")
-    # -----------------------------------------
-
-
+    
+    train_dataset = load_dataset(f"{input_path}", f"{data_subset}", split="train", cache_dir=f"{output_path}")
+    test_dataset = load_dataset(f"{input_path}", f"{data_subset}", split="test", cache_dir=f"{output_path}")
+    
 if __name__ == "__main__":
     app()

@@ -4,7 +4,9 @@ import typer
 
 from datasets import load_dataset
 
-from djtt_gpt.config import RAW_DATA_DIR, HF_PATH_DIR, DATASET_SUBSET
+from djtt_gpt.config import RAW_DATA_DIR, HF_PATH_DIR, DATASET_SUBSET, TABLE_GPT_DIR_TRAIN
+
+import pandas as pd
 
 app = typer.Typer()
 

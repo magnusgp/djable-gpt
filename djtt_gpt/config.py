@@ -17,6 +17,7 @@ PROCESSED_DATA_DIR = DATA_DIR / "processed"
 EXTERNAL_DATA_DIR = DATA_DIR / "external"
 HF_PATH_DIR = "LipengCS/Table-GPT"
 DATASET_SUBSET = "ErrorDetection"
+TABLE_GPT_DIR_TRAIN = DATA_DIR / "tablegpt_data/train/train_ErrorDetection.jsonl"
 
 MODELS_DIR = PROJ_ROOT / "models"
 
